@@ -53,11 +53,11 @@ def add_watermark_np(input_image_array, watermark_text="AI Generated"):
     font = ImageFont.truetype('arial.ttf', round(25/512*image.size[0]))
     d = ImageDraw.Draw(txt)
 
+    # white color with the alpha channel set to semi-transparent
     text_width, text_height = font.getsize(watermark_text)
     text_bbox = font.textbbox((0, 0), watermark_text)
     text_width = text_bbox[2] - text_bbox[0]
     text_height = text_bbox[3] - text_bbox[1]
-    # white color with the alpha channel set to semi-transparent
 
     # Draw the text onto the text canvas
     d.text(text_position, watermark_text, font=font, fill=text_color)
